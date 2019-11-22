@@ -4,22 +4,21 @@ import {
   Route,
   Switch
 } from "react-router-dom";
-import Vehicles from './components/Vehicles'
+import {
+  Vehicles,
+  People
+} from "./Components";
+import Navbar from "./Components/guest/Navbar";
 
 const axios = require('axios')
 
 function App() {
 
-
-
-
-
-
-
   return (
     <div>
-      <h1>aa</h1>
+      <Navbar/>
       <Vehicles />
+      <People />
 
       </div>
   );
