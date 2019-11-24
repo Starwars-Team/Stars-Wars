@@ -1,7 +1,7 @@
 import React from "react";
 // import { Vehicles, People } from "./Components";
-import Navbar from "./Components/guest/Navbar";
-import { SignIn, SignUp } from "./Components";
+import Navbar from "./components/Navbar";
+import { SignIn, SignUp } from "./components/";
 import {
   BrowserRouter as Router,
   Route,
@@ -15,9 +15,10 @@ const axios = require('axios')
 function App() {
   return (
     <div>
-      <Navbar/>
+     
 
     <Router>
+    <Navbar/>
       <Switch>
         {/* <Vehicles />
           <People /> */}
