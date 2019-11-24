@@ -20,3 +20,11 @@
 .App-link {
   color: #09d3ac;
 }
+
+body {
+  background-color: rgba(0, 0, 0, 0.226);
+}
+
+.navbarMember:hover {
+  color: yellow;
+}
