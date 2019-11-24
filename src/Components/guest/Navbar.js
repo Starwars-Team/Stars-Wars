@@ -22,10 +22,16 @@ export default class Navbar extends Component {
                         className="navbarMember"
                         variant="h6" 
                         style={{ 
-                            flexGrow: 1,
                         }}
                         >
                         Star Wars
+                        </Typography>
+                        <Typography
+                        variant="h6" 
+                        style={{ 
+                            flexGrow: 1
+                        }}
+                        >
                         </Typography>
                         <Button 
                         className="navbarMember"
