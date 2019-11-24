@@ -24,7 +24,8 @@ export default class Navbar extends Component {
                             flexGrow: 1,
                         }}
                         >
-                        Star Wars
+                            <h4 className="test">Star Wars</h4>
+                        
                         </Typography>
                         <Button 
                         color="inherit"
