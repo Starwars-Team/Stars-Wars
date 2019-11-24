@@ -1,5 +1,12 @@
     import React, { useState, useEffect } from "react";
     import Imagers from '../Assets/Images/vehicles/Imgres'
+    import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 
 export default function Vehicles() {
 
@@ -58,15 +65,37 @@ for (let i = 0; i < comfet.length; i++){
  
 
   return (
-    <div>
+    <div className="makeFlex">
+      {combi.map(item=>(
+ <Card style={{width: 345, margin: 20}} >
+        <CardActionArea>
+          <CardMedia style={{height : 140}}
+            image={item.image}
+            title="Contemplative Reptile"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              {item.name}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+              across all continents except Antarctica
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+        <CardActions>
+          <Button size="small" color="primary">
+            Share
+          </Button>
+          <Button size="small" color="primary">
+            Learn More
+          </Button>
+        </CardActions>
+      </Card>
 
-{combi.map(item=>(
-  <React.Fragment>
-    <img src={item.image}></img>
-<h1>{item.name}</h1>
-<p>{item.id}</p>
-</React.Fragment>
-  ))}
+))}
+
+
     </div>
   )
 }

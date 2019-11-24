@@ -30,6 +30,25 @@ class Navbar extends Component {
                             <h4 className="test">Star Wars</h4>
                         
                         </Typography>
+                        <Typography
+                         variant="h6" 
+                         style={{ 
+                             flexGrow: 1,
+                         }}
+                        >
+
+                        <Link to="/people">People</Link>
+                        </Typography>
+                        <Typography
+                         variant="h6" 
+                         style={{ 
+                             flexGrow: 1,
+                         }}
+                        >
+
+                        <Link to="/vehicles">Vehicles</Link>
+                        </Typography>
+
                         <Button 
                         color="inherit"
                         >
