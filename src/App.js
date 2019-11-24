@@ -14,23 +14,11 @@ const axios = require('axios')
 
 function App() {
 
-
-
-// console.log(images);
-
-
-
-
   return (
     <div>
-      <Mediacard />
-
-      {/* <Vehicles /> */}
-      {/* { images.map(
-        ({id, src}) => 
-        <img key={id} src={src} alt="this.jpg" />) } */}
-        {/* <img src='' /> */}
-     
+      <Navbar/>
+      <Vehicles />
+      <People />
 
       </div>
   );

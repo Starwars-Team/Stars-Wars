@@ -27,27 +27,76 @@ export default function Vehicles() {
   //   return item.src
   // })
 
-let stateandimg = state.concat(Image)
-console.log(stateandimg);
-
 
   return (
-    <div>
-      {stateandimg.map(item => (
-        <React.Fragment key={item.name}>
-          <img src={item.src}></img>
-          <h4>{"page 1 " + item.name}</h4>
-          {/* <picture>{'page 1 '+item.model}</picture> */}
-          {/* <p>{abc++}</p> */}
-        </React.Fragment>
-      ))}
+<div>
 
-      {statenxt.map(item => (
-        <React.Fragment key={item.name}>
-          <h4>{"page 2 " + item.name}</h4>
-          <p>{"page 2 " + item.model}</p>
-        </React.Fragment>
-      ))}
-    </div>
+
+<Card style={{maxWidth: 345}} >
+      <CardActionArea>
+ {Image.map(item => (
+ <CardMedia style={{height : 140}}
+ image={item.src}
+ title="Contemplative Reptile"
+/>
+ ))}
+
+       
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            Lizard
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+            across all continents except Antarctica
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions>
+        <Button size="small" color="primary">
+          Share
+        </Button>
+        <Button size="small" color="primary">
+          Learn More
+        </Button>
+      </CardActions>
+    </Card>
+  );
+}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // <div>
+    //   {stateandimg.map(item => (
+    //     <React.Fragment key={item.name}>
+    //       <img src={item.src}></img>
+    //       <h4>{"page 1 " + item.name}</h4>
+    //       {/* <picture>{'page 1 '+item.model}</picture> */}
+    //       {/* <p>{abc++}</p> */}
+    //     </React.Fragment>
+    //   ))}
+
+    //   {statenxt.map(item => (
+    //     <React.Fragment key={item.name}>
+    //       <h4>{"page 2 " + item.name}</h4>
+    //       <p>{"page 2 " + item.model}</p>
+    //     </React.Fragment>
+    //   ))}
+    // </div>
   );
 }

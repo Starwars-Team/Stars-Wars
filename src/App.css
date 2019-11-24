@@ -21,8 +21,10 @@
   color: #09d3ac;
 }
 
+body {
+  background-color: rgba(0, 0, 0, 0.226);
+}
 
-.test:hover {
-  color : yellow;
-
+.navbarMember:hover {
+  color: yellow;
 }
