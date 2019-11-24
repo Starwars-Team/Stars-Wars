@@ -1,30 +1,31 @@
 import React from "react";
-// import { Vehicles, People } from "./Components";
-import Navbar from "./components/Navbar";
-import { SignIn, SignUp } from "./components/";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch
-} from "react-router-dom";
-import './App.css'
-import Vc from './components/Card'
-console.log(Vc);
+// import Navbar from "./components/Navbar";
+// import { SignIn, SignUp } from "./components/";
+// import {
+//   BrowserRouter as Router,
+//   Route,
+//   Switch
+// } from "react-router-dom";
+// import './App.css'
+import Vc from './components/Vehicles'
 
 
 
-const axios = require('axios')
+
 
 function App() {
+  
+  
+  
+  
   return (
     <div>
-     
-
-    <Router>
+     {/* <Card /> */}
+     <Vc />
+    {/* <Router>
     <Navbar/>
       <Switch>
-        {/* <Vehicles />
-          <People /> */}
+      
         <Route path="/signin">
           <SignIn />
         </Route>
@@ -32,7 +33,7 @@ function App() {
           <SignUp />
         </Route>
       </Switch>
-    </Router>
+    </Router> */}
     
 
       </div>

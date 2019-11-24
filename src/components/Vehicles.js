@@ -1,24 +1,5 @@
     import React, { useState, useEffect } from "react";
-<<<<<<< HEAD
-//     import Image from '../Assets/Images/vehicles/Imgres'
-//     import Card from '@material-ui/core/Card';
-// import CardActionArea from '@material-ui/core/CardActionArea';
-// import CardActions from '@material-ui/core/CardActions';
-// import CardContent from '@material-ui/core/CardContent';
-// import CardMedia from '@material-ui/core/CardMedia';
-// import Button from '@material-ui/core/Button';
-// import Typography from '@material-ui/core/Typography';
-=======
-    import Image from '../Assets/Images/vehicles/Imgres'
-    import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
->>>>>>> e022ec7be7b8ac0b81864b3d76725ab26078cd94
-
+    import Imagers from '../Assets/Images/vehicles/Imgres'
 
 export default function Vehicles() {
 
@@ -43,17 +24,51 @@ export default function Vehicles() {
     });
   }, []);
 
-  let abc = state
+let imagerss = Imagers
+// console.log(imagerss);
 
-  // console.log(Image[0].src);
-  // const images = Image.map(item =>{
-  //   return item.src
-  // })
+let comfet = [...state, ...statenxt]
+// console.log(comfet);
 
 
-  return 
-abc   
-  
+
+
+
+
+let combi = [];
+
+for (let i = 0; i < comfet.length; i++){
+  combi[i] = {id: imagerss[i].id ,name: comfet[i].name, image: imagerss[i].src};
+}
+ console.log(combi);
+
+
+//SAMPLE HOW TO MARGE 2 OBJET ON ARRAY
+
+//  var arr1 = [{name: 'Jay'}, {name: 'Bob'}];
+// var arr2 = [{age: 22}, {age: 30}];
+// var combined = [];
+
+// for (var i = 0; i < arr1.length; i++) {
+//   combined[i] = {name: arr1[i].name, age: arr2[i].age};
+// }
+
+// console.log(combined);
+
+ 
+
+  return (
+    <div>
+
+{combi.map(item=>(
+  <React.Fragment>
+    <img src={item.image}></img>
+<h1>{item.name}</h1>
+<p>{item.id}</p>
+</React.Fragment>
+  ))}
+    </div>
+  )
 }
 
 
