@@ -4,8 +4,11 @@ import {
   Route,
   Switch
 } from "react-router-dom";
-import Navbar from './components/guest/Navbar'
+// import Navbar from './components/guest/Navbar'
 import './App.css'
+import Vc from './components/Card'
+console.log(Vc);
+
 
 
 const axios = require('axios')
@@ -14,7 +17,8 @@ function App() {
 
   return (
     <div>
-      <Navbar/>
+      {/* <Navbar/> */}
+      <Vc />
 
       </div>
   );

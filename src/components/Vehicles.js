@@ -1,8 +1,18 @@
     import React, { useState, useEffect } from "react";
-    import Image from '../Assets/Images/vehicles/Imgres'
+//     import Image from '../Assets/Images/vehicles/Imgres'
+//     import Card from '@material-ui/core/Card';
+// import CardActionArea from '@material-ui/core/CardActionArea';
+// import CardActions from '@material-ui/core/CardActions';
+// import CardContent from '@material-ui/core/CardContent';
+// import CardMedia from '@material-ui/core/CardMedia';
+// import Button from '@material-ui/core/Button';
+// import Typography from '@material-ui/core/Typography';
 
 
 export default function Vehicles() {
+
+
+ 
 
     
   const axios = require("axios").default;
@@ -22,36 +32,75 @@ export default function Vehicles() {
     });
   }, []);
 
+  let abc = state
+
   // console.log(Image[0].src);
   // const images = Image.map(item =>{
   //   return item.src
   // })
 
 
-  return (
-<div>
+  return 
+abc   
+  
+}
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/* <div className="parentCard">
+
+{Image.map(item => (
 <Card style={{maxWidth: 345}} >
       <CardActionArea>
- {Image.map(item => (
+ 
  <CardMedia style={{height : 140}}
  image={item.src}
  title="Contemplative Reptile"
 />
- ))}
+</CardActionArea>
 
-       
+</Card>
+
+ ))}
+{state.map(item => (
+       <Card >
+         <CardActionArea >
+
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Lizard
+            {item.name}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
-          </Typography>
-        </CardContent>
-      </CardActionArea>
+          </CardContent>
+          </CardActionArea>
+
+</Card>
+          ))}
+{state.map(item => (
+
+<Typography variant="body2" color="textSecondary" component="p">{item.name}
+</Typography>
+
+))}
+
+        
+        
+      
       <CardActions>
         <Button size="small" color="primary">
           Share
@@ -60,18 +109,13 @@ export default function Vehicles() {
           Learn More
         </Button>
       </CardActions>
-    </Card>
-  );
-}
+  
+
 </div>
 
 
 
-
-
-
-
-
+ */}
 
 
 
@@ -98,5 +142,3 @@ export default function Vehicles() {
     //     </React.Fragment>
     //   ))}
     // </div>
-  );
-}
