@@ -3,8 +3,11 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import { withRouter, Link } from "react-router-dom";
 
-export default class Navbar extends Component {
+
+
+class Navbar extends Component {
 
     render() {
         return (
@@ -19,32 +22,26 @@ export default class Navbar extends Component {
                 >
                     <Toolbar>
                         <Typography
-                        className="navbarMember"
                         variant="h6" 
                         style={{ 
+                            flexGrow: 1,
                         }}
                         >
-                        Star Wars
-                        </Typography>
-                        <Typography
-                        variant="h6" 
-                        style={{ 
-                            flexGrow: 1
-                        }}
-                        >
+                            <h4 className="test">Star Wars</h4>
+                        
                         </Typography>
                         <Button 
-                        className="navbarMember"
                         color="inherit"
                         >
-                        Register
+                            <Link to="/signup">Register</Link>
+                        
                         </Button>
                         ||
                         <Button 
-                        className="navbarMember"
                         color="inherit"
                         >
-                        Login
+                            <Link to="/signin">Login</Link>
+                        
                         </Button>
                     </Toolbar>
                 </AppBar>
@@ -52,3 +49,5 @@ export default class Navbar extends Component {
         )
     }
 }
+
+export default withRouter(Navbar);
