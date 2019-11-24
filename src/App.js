@@ -5,7 +5,7 @@ import {
   Switch
 } from "react-router-dom";
 import Vehicles from './components/Vehicles'
-import Nav from './components/guest/Navbar'
+import Navbar from './components/guest/Navbar'
 import './App.css'
 import Mediacard from './Assets/Images/vehicles/Card'
 
@@ -18,7 +18,6 @@ function App() {
     <div>
       <Navbar/>
       <Vehicles />
-      <People />
 
       </div>
   );
