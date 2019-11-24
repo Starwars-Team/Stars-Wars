@@ -4,13 +4,12 @@ import { Link } from "react-router-dom";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
-
 import Typography from "@material-ui/core/Typography";
 import axios from "axios";
 
-const API_STRING = process.env.API_STRING;
+const API_STRING = process.env.API_URL;
 
-export default class People extends Component {
+export default class Peoples extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,16 +19,35 @@ export default class People extends Component {
 
   componentDidMount = () => {
     axios
-      .get(API_STRING + '/people/')
+      .get("https://swapi.co/api/people")
       .then(res => {
-        this.setState({ data: res.data });
+        this.showDetail(res.data);
       })
       .catch(error => {
         console.log(error);
       });
   };
 
+  getDetail(apiURL) {
+    axios.get(apiURL).then(response => {
+      this.showDetail(response.data);
+    });
+  }
+
+  showDetail(data) {
+    for (let i = 0; i < 9; i++) {
+      console.log(data.next)
+      console.log(i);
+      this.setState({ data : data + data.results });
+      // name1.innerText = name1.innerText + "\n" + data.results[i].name;
+      if (data["next"]) {
+        this.getDetail(data.next);
+      }
+    }
+  }
+
   render() {
+    console.log(this.state.data);
     return (
       <div
         style={{
@@ -50,15 +68,15 @@ export default class People extends Component {
                   </Typography>
                   <br />
                   <Typography variant="subtitle2" component="p">
-                    Hair Color : {item.hair_color}
+                    Phone: {item.phone}
                   </Typography>
                   <Typography variant="subtitle2" component="p">
-                    gender: {item.gender}
+                    Website: {item.website}
                   </Typography>
                 </CardContent>
                 <CardActions>
                   <Button size="small">
-                    <Link to={`/users/${item.id}`}>Learn More</Link>
+                    <Link to={`/people/${item.id}`}>Learn More</Link>
                   </Button>
                 </CardActions>
               </Card>

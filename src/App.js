@@ -1,30 +1,27 @@
 import React from "react";
-// import { Vehicles, People } from "./Components";
-import Navbar from "./components/Navbar";
-import { SignIn, SignUp } from "./components/";
 import {
   BrowserRouter as Router,
   Route,
   Switch
 } from "react-router-dom";
-import './App.css'
-import Vc from './components/Card'
-console.log(Vc);
-
-
-
-const axios = require('axios')
+import {
+  Peoples,
+  Header,
+  SignIn,
+  SignUp
+} from "./components";
 
 function App() {
   return (
-    <div>
-     
-
     <Router>
-    <Navbar/>
+      <Header />
       <Switch>
-        {/* <Vehicles />
-          <People /> */}
+        <Route path="/" exact={true}>
+          <s />
+        </Route>
+        <Route path="/peoples" exact={true}>
+          <Peoples />
+        </Route>
         <Route path="/signin">
           <SignIn />
         </Route>
@@ -33,9 +30,6 @@ function App() {
         </Route>
       </Switch>
     </Router>
-    
-
-      </div>
   );
 }
 
