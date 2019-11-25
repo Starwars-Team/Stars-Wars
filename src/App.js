@@ -10,7 +10,9 @@ import {
   SignIn,
   SignUp,
   Vehicles,
-  Starships
+  Starships,
+  Planets,
+  Films
 } from "./components";
 import './App.scss'
 
@@ -27,6 +29,12 @@ function App() {
         </Route>
         <Route path="/Starships" exact={true}>
           <Starships />
+        </Route>
+        <Route path="/Planets" exact={true}>
+          <Planets />
+        </Route>
+        <Route path="/Films" exact={true}>
+          <Films />
         </Route>
         <Route path="/signin">
           <SignIn />

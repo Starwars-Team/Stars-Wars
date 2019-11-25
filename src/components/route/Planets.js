@@ -89,16 +89,16 @@ export default class Planets extends Component {
                 <div className="results__bg" id={item.model} />
                 <ul className="results__info">
                   <li>
-                    Model  <span>{item.model}</span>{" "}
+                    Terrain  <span>{item.terrain}</span>{" "}
                   </li>
                   <li>
-                    Manufacturer by  <span>{item.manufacturer}</span>
+                    Gravity  <span>{item.gravity}</span>
                   </li>
                   <li>
-                    Starship Class  <span>{item.starship_class}</span>{" "}
+                    Population  <span>{item.population}</span>{" "}
                   </li>
                 </ul>
-                <a href="/Starships">DETAILS</a>
+                <a href="/Planets">DETAILS</a>
               </li>
             );
           })}

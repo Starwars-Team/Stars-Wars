@@ -3,7 +3,7 @@ import axios from "axios";
 
 import "./../card.scss";
 
-export default class Peoples extends Component {
+export default class Films extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,7 +13,7 @@ export default class Peoples extends Component {
 
   componentDidMount = () => {
     axios
-      .get("https://swapi.co/api/people")
+      .get("https://swapi.co/api/films")
       .then(res => {
         this.showDetail(res.data);
       })
@@ -29,11 +29,7 @@ export default class Peoples extends Component {
   }
 
   showDetail(data) {
-    var joined = this.state.data.concat(data.results);
-    this.setState({ data: joined });
-    if (data["next"] && this.state.data.length !== 20) {
-      this.getDetail(data.next);
-    }
+    this.setState({ data: this.state.data });
   }
 
   handleChange(e) {
@@ -83,22 +79,24 @@ export default class Peoples extends Component {
         {this.state.data.length > 0 &&
           this.state.data.map((item, key) => {
             return (
-                <li className="results__item">
-                  <h3 className="results__title">{item.name}</h3>
-                  <div className="results__bg" id={item.type} />
-                  <ul className="results__info">
-                    <li>
-                      Gender <span>{item.gender}</span>
-                    </li>
-                    <li>
-                      Height <span>{item.height}cm</span>{" "}
-                    </li>
-                    <li>
-                      Weight <span>{item.mass}kg</span>{" "}
-                    </li>
-                  </ul>
-                  <a href="/People">DETAILS</a>
-                </li>
+              <li className="results__item">
+                <h3 className="results__title">
+                  {item.title + " ( Episode " + item.episode_id + " ) "}
+                </h3>
+                <div className="results__bg" id={item.type} />
+                <ul className="results__info">
+                  <li>
+                    Director <span>{item.director}</span>
+                  </li>
+                  <li>
+                    Producer <span>{item.producer}</span>{" "}
+                  </li>
+                  <li>
+                    Release Date <span>{item.release_date}</span>{" "}
+                  </li>
+                </ul>
+                <a href="/People">DETAILS</a>
+              </li>
             );
           })}
       </div>
