@@ -145,8 +145,7 @@ export default function About() {
             Full Stack Developer
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+            Akla is AKLA
           </Typography>
         </CardContent>
       </CardActionArea>

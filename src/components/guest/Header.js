@@ -18,7 +18,7 @@ export default class Header extends Component {
             <Typography  variant="h6" style={{}}>
             <Link to="/"
             >
-              <img style={{width:'12%', paddingTop:'10px'}} src={banner} alt="banner"/>
+              <img style={{ width:'12%', paddingTop:'10px'}} src={banner} alt="banner"/>
             </Link>
             </Typography>
             <Typography

@@ -13,7 +13,11 @@ import {
   Starships,
   Planets,
   Films,
-  About
+  About,
+  PlanetsPost,
+  FilmsPost,
+  PeoplesPost,
+  StarshipsPost
 } from "./components";
 import './App.scss'
 
@@ -36,6 +40,18 @@ function App() {
         </Route>
         <Route path="/Films" exact={true}>
           <Films />
+        </Route>
+        <Route path="/people:id" exact={true}>
+          <PeoplesPost />
+        </Route>
+        <Route path="/Starships:id" exact={true}>
+          <StarshipsPost />
+        </Route>
+        <Route path="/Planets:id" exact={true}>
+          <PlanetsPost />
+        </Route>
+        <Route path="/Films:id" exact={true}>
+          <FilmsPost />
         </Route>
         <Route path="/signin">
           <SignIn />
