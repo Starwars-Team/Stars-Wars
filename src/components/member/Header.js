@@ -9,6 +9,8 @@ import Background from "../Background";
 
 const useStyles = makeStyles({
   root: {
+    backgroundColor:'black',
+    color:'white',
     flexGrow: 1
   }
 });
@@ -30,8 +32,7 @@ export default function Header() {
       <Tabs
         value={value}
         onChange={handleChange}
-        indicatorColor="primary"
-        textColor="primary"
+        textColor="inherit"
         centered
       >
         <Tab label="People" component={Link} to="/People" />
