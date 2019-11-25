@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-import "./card.scss";
+import "./../card.scss";
 
-const API_STRING = process.env.API_URL;
-
-export default class Peoples extends Component {
+export default class Planets extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,9 +13,10 @@ export default class Peoples extends Component {
 
   componentDidMount = () => {
     axios
-      .get("https://swapi.co/api/people")
+      .get("https://swapi.co/api/planets")
       .then(res => {
         this.showDetail(res.data);
+        console.log(res.data)
       })
       .catch(error => {
         console.log(error);
@@ -79,27 +78,28 @@ export default class Peoples extends Component {
           flexWrap: "wrap",
           justifyContent: "space-around",
           background: "",
-          margin: '2vw'
+          margin: "2vw"
         }}
       >
         {this.state.data.length > 0 &&
           this.state.data.map((item, key) => {
             return (
-                <li className="results__item">
-                  <h3 className="results__title">{item.name}</h3>
-                  <div className="results__bg" id={item.type} />
-                  <ul className="results__info">
-                    <li>
-                      Gender <span>{item.gender}</span>
-                    </li>
-                    <li>
-                      Height <span>{item.height}cm</span>{" "}
-                    </li>
-                    <li>
-                      Weight <span>{item.mass}kg</span>{" "}
-                    </li>
-                  </ul>
-                </li>
+              <li className="results__item">
+                <h3 className="results__title">{item.name}</h3>
+                <div className="results__bg" id={item.model} />
+                <ul className="results__info">
+                  <li>
+                    Model  <span>{item.model}</span>{" "}
+                  </li>
+                  <li>
+                    Manufacturer by  <span>{item.manufacturer}</span>
+                  </li>
+                  <li>
+                    Starship Class  <span>{item.starship_class}</span>{" "}
+                  </li>
+                </ul>
+                <a href="/Starships">DETAILS</a>
+              </li>
             );
           })}
       </div>
