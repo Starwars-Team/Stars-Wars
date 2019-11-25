@@ -15,22 +15,12 @@ export default class Films extends Component {
     axios
       .get("https://swapi.co/api/films")
       .then(res => {
-        this.showDetail(res.data);
+        this.setState({ data: res.data.results });
       })
       .catch(error => {
         console.log(error);
       });
   };
-
-  getDetail(apiURL) {
-    axios.get(apiURL).then(response => {
-      this.showDetail(response.data);
-    });
-  }
-
-  showDetail(data) {
-    this.setState({ data: this.state.data });
-  }
 
   handleChange(e) {
     // Variable to hold the original version of the list
