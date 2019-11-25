@@ -29,3 +29,8 @@ body {
   color: yellow;
 }
 
+.makeFlex {
+  justify-content: center;
+  display: flex;
+flex-wrap: wrap;
+}

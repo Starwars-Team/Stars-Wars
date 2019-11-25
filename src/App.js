@@ -1,20 +1,23 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
+import 
+{BrowserRouter as Router,
   Route,
   Switch
 } from "react-router-dom";
 import {
   Peoples,
-  Header,
+  Navbar,
   SignIn,
-  SignUp
+  SignUp,
+  Vehicles
 } from "./components";
+import './App.css'
 
 function App() {
   return (
+    <div>
     <Router>
-      <Header />
+      <Navbar />
       <Switch>
         <Route path="/" exact={true}>
           <s />
@@ -28,8 +31,15 @@ function App() {
         <Route path="/signup">
           <SignUp />
         </Route>
+        <Route path="/vehicles">
+          <Vehicles />
+        </Route>
       </Switch>
     </Router>
+<h1>
+  THIS IS HOME LOH :) HEHEHHE
+</h1>
+      </div>
   );
 }
 
