@@ -30,19 +30,16 @@ export default class Peoples extends Component {
 
   getDetail(apiURL) {
     axios.get(apiURL).then(response => {
+      console.log(response.data);
       this.showDetail(response.data);
     });
   }
 
   showDetail(data) {
-    for (let i = 0; i < 9; i++) {
-      console.log(data.next)
-      console.log(i);
-      this.setState({ data : data + data.results });
-      // name1.innerText = name1.innerText + "\n" + data.results[i].name;
-      if (data["next"]) {
-        this.getDetail(data.next);
-      }
+    var joined = this.state.data.concat(data.results);
+    this.setState({ data: joined });
+    if (data["next"] && this.state.data.length !== 20) {
+      this.getDetail(data.next);
     }
   }
 

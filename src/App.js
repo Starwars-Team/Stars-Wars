@@ -6,7 +6,7 @@ import
 } from "react-router-dom";
 import {
   Peoples,
-  Navbar,
+  Header,
   SignIn,
   SignUp,
   Vehicles
@@ -15,9 +15,8 @@ import './App.css'
 
 function App() {
   return (
-    <div>
     <Router>
-      <Navbar />
+      <Header />
       <Switch>
         <Route path="/" exact={true}>
           <s />
@@ -36,10 +35,6 @@ function App() {
         </Route>
       </Switch>
     </Router>
-<h1>
-  THIS IS HOME LOH :) HEHEHHE
-</h1>
-      </div>
   );
 }
 

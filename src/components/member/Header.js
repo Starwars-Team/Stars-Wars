@@ -1,98 +1,49 @@
 import React from "react";
-import PropTypes from "prop-types";
-import SwipeableViews from "react-swipeable-views";
-import { useTheme } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
+import { makeStyles } from "@material-ui/core/styles";
+import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
-import Typography from "@material-ui/core/Typography";
-import Box from "@material-ui/core/Box";
-import Link from "@material-ui/core/Link";
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
-function TabPanel(props) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <Typography
-      component="div"
-      role="tabpanel"
-      hidden={value !== index}
-      id={`full-width-tabpanel-${index}`}
-      aria-labelledby={`full-width-tab-${index}`}
-      {...other}
-    >
-      <Box p={3}>{children}</Box>
-    </Typography>
-  );
-}
-
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired
-};
-
-function a11yProps(index) {
-  return {
-    id: `full-width-tab-${index}`,
-    "aria-controls": `full-width-tabpanel-${index}`
-  };
-}
+const useStyles = makeStyles({
+  root: {
+    flexGrow: 1
+  }
+});
 
 export default function Header() {
-  const theme = useTheme();
+  const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
-  const handleChangeIndex = index => {
-    setValue(index);
+  const logOut = () => {
+    localStorage.removeItem("isLogin");
+    Swal.fire(
+      'Log Out!',
+      'You' + 're logged out!',
+      'success'
+    )
   };
 
   return (
-    <div style={{ color: "white" }}>
-      <AppBar position="static" color="default">
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          variant="fullWidth"
-          aria-label="full width tabs"
-          style={{ color: "white", background: "black" }}
-        >
-          <Tab label="Peoples" {...a11yProps(0)} />
-          <Tab label="Planets" {...a11yProps(1)} />
-          <Tab label="Vehicles" {...a11yProps(2)} />
-          <Tab label="Starships" {...a11yProps(3)} />
-          <Tab label="Films" {...a11yProps(4)} />
-          <Tab label="Logout" {...a11yProps(5)} />
-        </Tabs>
-      </AppBar>
-      <SwipeableViews
-        axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-        index={value}
-        onChangeIndex={handleChangeIndex}
+    <Paper className={classes.root}>
+      <Tabs
+        value={value}
+        onChange={handleChange}
+        indicatorColor="primary"
+        textColor="primary"
+        centered
       >
-        <TabPanel value={value} index={0} dir={theme.direction}>
-          People
-        </TabPanel>
-        <TabPanel value={value} index={1} dir={theme.direction}>
-          Planet
-        </TabPanel>
-        <TabPanel value={value} index={2} dir={theme.direction}>
-          Vehicle
-        </TabPanel>
-        <TabPanel value={value} index={3} dir={theme.direction}>
-          Starship
-        </TabPanel>
-        <TabPanel value={value} index={4} dir={theme.direction}>
-          Film
-        </TabPanel>
-        <TabPanel value={value} index={5} dir={theme.direction}>
-          Isi Fungsi LogOut disini
-        </TabPanel>
-      </SwipeableViews>
-    </div>
+        <Tab label="Peoples" component={Link} to="/Peoples" />
+        <Tab label="Planets" component={Link} to="/Planets" />
+        <Tab label="Starships" component={Link} to="/Starships" />
+        <Tab label="Vehicles" component={Link} to="/Vehicles" />
+        <Tab label="Films" component={Link} to="/Films" />
+        <Tab label="Log Out" component={Link} to="/" onClick={logOut} />
+      </Tabs>
+    </Paper>
   );
 }
