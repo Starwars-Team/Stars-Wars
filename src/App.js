@@ -9,7 +9,8 @@ import {
   Header,
   SignIn,
   SignUp,
-  Vehicles
+  Vehicles,
+  About
 } from "./components";
 import './App.scss'
 
@@ -19,7 +20,7 @@ function App() {
       <Header />
       <Switch>
         <Route path="/" exact={true}>
-          <s />
+          <About />
         </Route>
         <Route path="/peoples" exact={true}>
           <Peoples />
@@ -33,6 +34,7 @@ function App() {
         <Route path="/vehicles">
           <Vehicles />
         </Route>
+       
       </Switch>
     </Router>
   );

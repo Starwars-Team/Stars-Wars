@@ -117,3 +117,14 @@ flex-wrap: wrap;
     left:0;
     right:0;
 }
+
+.parentabout {
+  display: flex;
+  justify-content: center;
+}
+
+.about {
+  justify-content: center;
+  display: flex;
+flex-wrap: wrap;
+}
