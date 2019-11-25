@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { AppBar, Toolbar, Typography, Button } from "@material-ui/core";
 import { Link } from "react-router-dom"; //
-import { withTheme } from "@material-ui/styles";
+import Background from '../Background'
 export default class Header extends Component {
   render() {
     return (
@@ -35,7 +35,7 @@ export default class Header extends Component {
                 Register</Link>
             </Button>
             ||
-            <Button className="navbarMember" color="inherit">
+            <Button color="inherit">
               <Link to="/signin"
               className="navbarMember"
               >
@@ -43,6 +43,12 @@ export default class Header extends Component {
             </Button>
           </Toolbar>
         </AppBar>
+        <Background
+					ref={this.navEffect}
+					id="my-background"
+					aboutRef={this.about}
+					bounceIn={"wow bounceIn"}
+				/>
       </div>
     );
   }
