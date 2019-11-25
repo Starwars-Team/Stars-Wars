@@ -5,6 +5,7 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import Background from "../Background";
 
 const useStyles = makeStyles({
   root: {
@@ -21,11 +22,7 @@ export default function Header() {
   };
   const logOut = () => {
     localStorage.removeItem("isLogin");
-    Swal.fire(
-      'Log Out!',
-      'You' + 're logged out!',
-      'success'
-    )
+    Swal.fire("Log Out!", "You are logged out!", "success");
   };
 
   return (
@@ -44,6 +41,10 @@ export default function Header() {
         <Tab label="Films" component={Link} to="/Films" />
         <Tab label="Log Out" component={Link} to="/" onClick={logOut} />
       </Tabs>
+      <Background
+        id="my-background"
+        bounceIn={"wow bounceIn"}
+      />
     </Paper>
   );
 }

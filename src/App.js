@@ -23,7 +23,7 @@ function App() {
         </Route>
         <Route path="/peoples" exact={true}>
           <Peoples />
-        </Route>
+        </Route>ya
         <Route path="/signin">
           <SignIn />
         </Route>
