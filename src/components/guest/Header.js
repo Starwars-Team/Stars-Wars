@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { AppBar, Toolbar, Typography, Button } from "@material-ui/core";
 import { Link } from "react-router-dom"; //
+import { withTheme } from "@material-ui/styles";
 export default class Header extends Component {
   render() {
     return (
@@ -13,21 +14,32 @@ export default class Header extends Component {
           }}
         >
           <Toolbar>
-            <Typography className="navbarMember" variant="h6" style={{}}>
+            <Typography  variant="h6" style={{}}>
+            <Link to="/"
+            className="navbarMember"
+            >
               Star Wars
+            </Link>
             </Typography>
             <Typography
               variant="h6"
               style={{
                 flexGrow: 1
               }}
-            ></Typography>
-            <Button className="navbarMember" color="inherit">
-              <Link to="/signup">Register</Link>
+            >
+            </Typography>
+            <Button color="inherit">
+              <Link to="/signup"
+              className="navbarMember"
+              >
+                Register</Link>
             </Button>
             ||
             <Button className="navbarMember" color="inherit">
-              <Link to="/signin">Login</Link>
+              <Link to="/signin"
+              className="navbarMember"
+              >
+                Login</Link>
             </Button>
           </Toolbar>
         </AppBar>
