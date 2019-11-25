@@ -74,14 +74,7 @@ export default function Vehicles() {
               </Typography>
             </CardContent>
           </CardActionArea>
-          <CardActions>
-            <Button size="small" color="primary">
-              Share
-            </Button>
-            <Button size="small" color="primary">
-              Learn More
-            </Button>
-          </CardActions>
+       
         </Card>
       ))}
     </div>
