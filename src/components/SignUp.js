@@ -177,10 +177,9 @@ function SignUp(props) {
                             </Button>
                             <Grid container justify="flex-end">
                                 <Grid item>
-                                    <AnchorLink href="" variant="body2">
+                                    <AnchorLink component={Link} to="/signin" variant="body2">
                                         Already have an account?
                                     </AnchorLink>
-                                    <Link to="/signin">Sign in</Link>
                                 </Grid>
                             </Grid>
                         </form>
