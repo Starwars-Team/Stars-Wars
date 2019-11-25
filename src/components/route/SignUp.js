@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
 import { Formik, ErrorMessage } from "formik";
-import { validationForm } from "../validate";
+import { validationForm } from "../../validate";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -177,10 +177,9 @@ function SignUp(props) {
                             </Button>
                             <Grid container justify="flex-end">
                                 <Grid item>
-                                    <AnchorLink href="" variant="body2">
+                                    <AnchorLink component={Link} to="/signin" variant="body2">
                                         Already have an account?
                                     </AnchorLink>
-                                    <Link to="/signin">Sign in</Link>
                                 </Grid>
                             </Grid>
                         </form>

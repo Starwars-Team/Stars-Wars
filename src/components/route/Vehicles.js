@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Imagers from "../Assets/Images/vehicles/Imgres";
+import Imagers from "../../Assets/Images/vehicles/Imgres";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
@@ -80,77 +80,3 @@ export default function Vehicles() {
     </div>
   );
 }
-
-// {
-/* <div className="parentCard">
-
-{Image.map(item => (
-<Card style={{maxWidth: 345}} >
-      <CardActionArea>
- 
- <CardMedia style={{height : 140}}
- image={item.src}
- title="Contemplative Reptile"
-/>
-</CardActionArea>
-
-</Card>
-
- ))}
-{state.map(item => (
-       <Card >
-         <CardActionArea >
-
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            {item.name}
-          </Typography>
-          </CardContent>
-          </CardActionArea>
-
-</Card>
-          ))}
-{state.map(item => (
-
-<Typography variant="body2" color="textSecondary" component="p">{item.name}
-</Typography>
-
-))}
-
-        
-        
-      
-      <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
-      </CardActions>
-  
-
-</div>
-
-
-
- */
-// }
-
-// <div>
-//   {stateandimg.map(item => (
-//     <React.Fragment key={item.name}>
-//       <img src={item.src}></img>
-//       <h4>{"page 1 " + item.name}</h4>
-//       {/* <picture>{'page 1 '+item.model}</picture> */}
-//       {/* <p>{abc++}</p> */}
-//     </React.Fragment>
-//   ))}
-
-//   {statenxt.map(item => (
-//     <React.Fragment key={item.name}>
-//       <h4>{"page 2 " + item.name}</h4>
-//       <p>{"page 2 " + item.model}</p>
-//     </React.Fragment>
-//   ))}
-// </div>

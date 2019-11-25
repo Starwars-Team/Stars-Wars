@@ -35,7 +35,7 @@ export default function Header() {
         textColor="inherit"
         centered
       >
-        <Tab label="Peoples" component={Link} to="/Peoples" />
+        <Tab label="People" component={Link} to="/People" />
         <Tab label="Planets" component={Link} to="/Planets" />
         <Tab label="Starships" component={Link} to="/Starships" />
         <Tab label="Vehicles" component={Link} to="/Vehicles" />
