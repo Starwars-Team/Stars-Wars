@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { AppBar, Toolbar, Typography, Button } from "@material-ui/core";
 import { Link } from "react-router-dom"; //
 import Background from '../Background'
+import banner from "./banner.png"
 export default class Header extends Component {
   render() {
     return (
@@ -16,9 +17,8 @@ export default class Header extends Component {
           <Toolbar>
             <Typography  variant="h6" style={{}}>
             <Link to="/"
-            className="navbarMember"
             >
-              Star Wars
+              <img style={{width:'12%', paddingTop:'10px'}} src={banner} alt="banner"/>
             </Link>
             </Typography>
             <Typography
